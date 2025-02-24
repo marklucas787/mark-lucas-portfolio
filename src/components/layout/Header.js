@@ -8,6 +8,7 @@ const Header = () => {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Portfolio', path: '/portfolio' },
+    { name: 'Testimonials', path: '/testimonials' },  // Add this line
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -50,9 +51,12 @@ const Header = () => {
           {item.name}
         </a>
       ))}
-      <button className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-300 w-full">
-        Get Started
-      </button>
+     <button
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  className="text-gray-600 hover:text-blue-600"
+>
+  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+</button>
     </div>
   </div>
 )}
